@@ -9,6 +9,9 @@
 <body>
 
   <button id="root">click</button>
+  <h1 id="h1">달을 등지고 </h1>
+  <h2 id="h2">파도를 타고</h2>
+
   <script>
     // console.log(this);
     // console.log(window);
@@ -16,12 +19,35 @@
     // // 콘솔을 자주 찍으면 아무문제 없음
     const root = window.document.querySelector("#root");
     console.log(root);
-    root.addEventListener("click",function(){
-      console.log(this);
-      this.style.color = "red";
-    })
+    const h1 = document.getElementById("h1");
+    const h2 = document.getElementById("h2");
 
+    
+    
+    // root.addEventListener("click",function(){
+    //   console.log(this);
+    //   this.style.color = "red";
+    // })
 
+// <!--! 레벨이 다름  위의 코드는 하나만 가능 아래 this를 쓴 코드는 여러개를 작동시킬 수 있음
+  
+    function thisEvent(element,color){
+      
+      element.addEventListener("click",function(){
+        this.style.color = color;
+      });
+      element.addEventListener("mouseover",function(){
+        this.style.backgroundColor = color;
+      });
+    };
+    //  사실을 이벤트 객체에 this가 있음
+
+    thisEvent(root,"red");
+    thisEvent(h1,"blue");
+    thisEvent(h2,"green");
+
+    // 와 그러면 거의 모든것을 자동으로 제어가 가능하네 this와 함수가 만나면 굉장한 퍼포먼스를 내는구나
+    // 와 진짜 코드 짧다 대박적
 
   </script>
   
