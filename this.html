@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <button id="root">click</button>
+  <script>
+    // console.log(this);
+    // console.log(window);
+    // console.dir(this.document);
+    // // 콘솔을 자주 찍으면 아무문제 없음
+    const root = window.document.querySelector("#root");
+    console.log(root);
+    root.addEventListener("click",function(){
+      console.log(this);
+      this.style.color = "red";
+    })
+
+
+
+  </script>
+  
+  
+</body>
+</html>
