@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root" style="width:100vw;display:flex;justify-content:center; align-items : center; height:100vh;background-color:#ccc;">
+    <button>left</button>
+    <div id="container">
+      <item id="1">1</item>
+      <item id="2">2</item>
+      <item id="3">3</item>
+      <item id="4">4</item>
+      <item id="5">5</item>
+    </div>
+      <button>right</button>
+  </div>
+  <script>
+    const root = document.getElementById("root");
+    // console.dir(root);
+    const container = document.getElementById("container");
+    // console.dir(container);
+    
+    
+    
+    let numbers = Array.from(container.children);
+    // console.log(numbers);
+    const btnLeft = document.querySelector("#root>button:nth-child(1)")
+    // console.log(btnLeft)
+    const btnRight = document.querySelector("#root>button:nth-child(3)")
+    // console.log(btnRight)
+    
+
+    btnLeft.addEventListener("click", function(){
+      // console.log("꿈이 아파 잠들지 못하는 밤")
+      // let i = 0;
+      // numbers.splice(0,1);
+// <!-- ^ if 문이 안된다 number.lenght === 0 이 조건이 되지 못하는 듯 -->
+// <!-- ? if 문이 안된다 왜? -->
+
+      // if(numbers.lenght===0){
+      //   console.log("작은 숨소리마저 아려와")
+      //   // let make = document.createElement("item");
+      //   // container.appendChild(make);
+      //   // numbers = Array.from(container.children);
+      // }
+
+
+      let tmp = numbers[4];
+      numbers.splice(4, 1);
+      numbers.unshift(tmp);
+      console.log(numbers);
+      // 됐다 이제 배열의 순서는 바뀌는데 화면의 위치가 바뀌지는 않음...
+      // <!--? html로 요소를 만들면 html이 최우선이기 때문에 js로 제어가 안되나?-->
+      
+    })
+    
+    
+  </script>
+  
+  
+</body>
+</html>
