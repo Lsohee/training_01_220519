@@ -18,11 +18,16 @@
     // console.dir(this.document);
     // // 콘솔을 자주 찍으면 아무문제 없음
     const root = window.document.querySelector("#root");
-    console.log(root);
+    // console.log(root);
     const h1 = document.getElementById("h1");
     const h2 = document.getElementById("h2");
-
     
+    let ten = 10;
+    
+    // root.addEventListener("click",function(){
+    //   ten +=5;
+    //   h1.style.fontSize = ten+"px";
+    // });
     
     // root.addEventListener("click",function(){
     //   console.log(this);
@@ -36,11 +41,24 @@
       element.addEventListener("click",function(){
         this.style.color = color;
       });
-      element.addEventListener("mouseover",function(){
-        this.style.backgroundColor = color;
-      });
+      // element.addEventListener("mouseover",function(){
+      //   this.style.backgroundColor = "purple";
+      // });
     };
     //  사실을 이벤트 객체에 this가 있음
+
+    function biggerFont(elment2,plusFont){
+      elment2.addEventListener("click", function(){
+        // console.log(this);
+        ten += plusFont;
+      elment2.style.fontSize = ten+"px";
+      })
+    }
+    
+    
+
+    biggerFont(h1,1);
+    biggerFont(h2,10);
 
     thisEvent(root,"red");
     thisEvent(h1,"blue");
