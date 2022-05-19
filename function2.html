@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <span id="test">꿈이 아파 잠들지 못하는 밤 작은 숨소리마저 아려와</span>
+
+  <script>
+    const test = document.getElementById("test");
+    console.dir(test);
+
+    function tagNameMaker(element){
+      if(element.tagName !== "" && element.tagName !== null){
+        return element.tagName.toLowerCase();
+        // 소문자로 바꿔줌 string값임
+      };
+    };
+
+    console.log(tagNameMaker(test));
+
+
+    const makeSpan = document.createElement(tagNameMaker(test));
+    const makeSpanMaker = document.body.appendChild(makeSpan);
+    console.dir(makeSpanMaker);
+    makeSpanMaker.textContent = "뮤지컬";
+    makeSpanMaker.style.backgroundColor = "red";
+    makeSpanMaker.style.width = "100px"
+    makeSpanMaker.style.height = "100px"
+
+
+    console.log(makeSpanMaker.textContent.length);
+
+  </script>
+</body>
+</html>
